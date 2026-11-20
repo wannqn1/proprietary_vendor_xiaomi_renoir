@@ -10029,6 +10029,10 @@ cc_prebuilt_library_shared {
 
 cc_prebuilt_library_shared {
     name: "libssccalapi",
+    enabled: select(soong_config_variable("xiaomi_sm8350", "use_renoir_ssccalapi"), {
+        true: true,
+        default: false,
+    }),
     owner: "xiaomi",
     strip: {
         none: true,
